@@ -1,0 +1,39 @@
+<!--
+<div>
+   <h3>Mailing List</h3>
+    <ul class="mailinglist">
+        <li  data-ng-repeat="mail in items" data-ng-class="{'red':$index%2!=0}">
+            <div data-ng-swipe-left="mail.showAction=true" data-ng-hide="mail.showAction">
+                <p>From:{{mail.from}}</p>
+
+                <p>To:{{mail.to}}</p>
+
+                <p>{{mail.body}}</p>
+                <button data-ng-click="mail.click()">click this</button>
+            </div>
+            <ul data-ng-show="mail.showAction" data-ng-swipe-right="mail.showAction=false">
+                <li>Remove</li>
+                <li>Add</li>
+            </ul>
+        </li>
+    </ul>
+</div>-->
+        <!--angular gestures-->
+<!--<div>
+    <div class="cardprops" hm-tap="tapped($event)">
+        <div class="tradingCard">
+            <div><img src="images/ari.jpeg" alt=""/>
+                <span>ari learner</span>
+            </div>
+        </div>
+        <div class="tradingCard">
+            <div><img src="images/nate.jpeg" alt=""/>
+            <span>nate</span></div>
+        </div>
+    </div>
+</div>-->
+
+<p><button data-ng-click="push">enter</button></p>
+<P><button data-ng-click="pop">leave</button></P>
+<P><button data-ng-click="move">move</button>
+</P>

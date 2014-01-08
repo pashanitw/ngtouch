@@ -1,0 +1,12 @@
+.mailinglist{
+    background: #ffffff;
+}
+.gray{
+    background-color: #808080;
+}
+.mailinglist li{
+    border: 1px solid #808080;
+}
+.red{
+    color:#ff0000;
+}
