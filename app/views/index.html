@@ -4,7 +4,17 @@
     </nav>
     <article>
         <div class="image-container">
-            <img>
+            <img  data-ng-repeat="picture in pictures" data-ng-src="picture.src" >
+            <a class="arrow" href="" data-ng-click="showPrev()"></a>
+            <a class="arrow" href="" data-ng-click="showNext()"></a>
+
+            <div>
+                <a class="slick prev"/>
+                <ul>
+                    <li></li>
+                </ul>
+                <a class="slick next"/>
+            </div>
         </div>
     </article>
 </div>
