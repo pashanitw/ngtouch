@@ -1,17 +1,18 @@
-<div>
+<div class="slider">
     <nav>
 
     </nav>
     <article>
         <div class="image-container">
-            <img  data-ng-repeat="picture in pictures" data-ng-src="picture.src" >
-            <a class="arrow" href="" data-ng-click="showPrev()"></a>
-            <a class="arrow" href="" data-ng-click="showNext()"></a>
-
-            <div>
+            <img  data-ng-repeat="picture in pictures" data-ng-src="{{picture}}" data-ng-show="isActiveIndex($index)" >
+            <a class="arrow prev" href="" data-ng-click="showPrev()"></a>
+            <a class="arrow next" href="" data-ng-click="showNext()"></a>
+            <div class="slickview">
                 <a class="slick prev"/>
                 <ul>
-                    <li></li>
+                    <li data-ng-repeat="picture in pictures" data-ng-click="showPic($index)" data-ng-class="{'active':isActiveIndex($index)}">
+                        <img data-ng-src="{{picture}}"/>
+                    </li>
                 </ul>
                 <a class="slick next"/>
             </div>

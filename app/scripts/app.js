@@ -6,7 +6,6 @@ angular.module('ngtouchApp', [
         'ngSanitize',
         'ngRoute',
         'ngTouch',
-        'angular-gestures',
         'ngAnimate'
     ])
   .config(function ($routeProvider) {
@@ -16,7 +15,7 @@ angular.module('ngtouchApp', [
                 controller: 'MainCtrl'
             })
             .when('/', {
-                templateUrl: 'views/IndexCtrl.html',
+                templateUrl: 'views/index.html',
                 controller: 'IndexCtrl'
             })
             .otherwise({
