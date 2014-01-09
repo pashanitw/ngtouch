@@ -12,11 +12,13 @@ angular.module('ngtouchApp')
         $scope.isActiveIndex= function ($index) {
           return $index==$scope.activeIndex;
         };
-        $scope.showPrev=function(){
-            $scope.activeIndex=-1;
-          //  $scope.activeIndex=(--$scope.activeIndex<0)?$scope.pictures.length-1:$scope.activeIndex;
+        $scope.isNext=true;
+        $scope.showPrev=function($event){
+            $scope.isNext=false;
+           $scope.activeIndex=(--$scope.activeIndex<0)?$scope.pictures.length-1:$scope.activeIndex;
         }
         $scope.showNext= function () {
+            $scope.isNext=true;
             $scope.activeIndex=(++$scope.activeIndex)%$scope.pictures.length;
         };
         $scope.showPic=function($index){

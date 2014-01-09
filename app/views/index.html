@@ -4,7 +4,7 @@
     </nav>
     <article>
         <div class="image-container">
-            <img class="main"  data-ng-repeat="picture in pictures" data-ng-src="{{picture}}" data-ng-show="isActiveIndex($index)" >
+            <img class="main"  data-ng-repeat="picture in pictures" data-ng-class="{'isNext':isNext,'isPrev':!isNext}" data-ng-src="{{picture}}" data-ng-show="isActiveIndex($index)" >
             <a class="arrow prev" href="" data-ng-click="showPrev()"></a>
             <a class="arrow next" href="" data-ng-click="showNext()"></a>
             <div class="slickview">

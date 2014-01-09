@@ -75,24 +75,45 @@ body{
 .main{
     left: 0;
 }
-.ng-hide-add,.ng-hide-remove{
+/* next click styles */
+.isNext.ng-hide-add,.ng-hide-remove{
     display: block !important;
 }
-.main.ng-hide-add{
+.isNext.main.ng-hide-add{
     -webkit-transition: all 2s ease;
    -webkit-transform:translateX(0px);
     display: block !important;
 
 }
-.main.ng-hide-remove{
+.isNext.main.ng-hide-remove{
     -webkit-transition: all 2s ease;
     -webkit-transform:translateX(-600px);
 }
-.main.ng-hide-remove-active{
+.isNext.main.ng-hide-remove-active{
     left:600px;
 }
-.main.ng-hide-add-active{
+.isNext.main.ng-hide-add-active{
     left: 600px;
+}
+/* previou click style */
+.isPrev.ng-hide-add,.ng-hide-remove{
+    display: block !important;
+}
+.isPrev.main.ng-hide-add{
+    -webkit-transition: all 2s ease;
+    -webkit-transform:translateX(0px);
+    display: block !important;
+
+}
+.isPrev.main.ng-hide-remove{
+    -webkit-transition: all 2s ease;
+    -webkit-transform:translateX(600px);
+}
+.isPrev.main.ng-hide-remove-active{
+    left:-600px;
+}
+.isPrev.main.ng-hide-add-active{
+    left: -600px;
 }
 
 .simple{
