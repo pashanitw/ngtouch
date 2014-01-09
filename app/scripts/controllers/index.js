@@ -13,12 +13,17 @@ angular.module('ngtouchApp')
           return $index==$scope.activeIndex;
         };
         $scope.showPrev=function(){
-            $scope.activeIndex=(--$scope.activeIndex<0)?$scope.pictures.length-1:$scope.activeIndex;
+            $scope.activeIndex=-1;
+          //  $scope.activeIndex=(--$scope.activeIndex<0)?$scope.pictures.length-1:$scope.activeIndex;
         }
         $scope.showNext= function () {
             $scope.activeIndex=(++$scope.activeIndex)%$scope.pictures.length;
         };
         $scope.showPic=function($index){
             $scope.activeIndex=$index;
+        }
+        $scope.animate=false;
+        $scope.anm=function(){
+            $scope.animate=true;
         }
     });
