@@ -1,10 +1,11 @@
-<div class="slider">
+<div class="main">
+    <div class="slider left">
     <nav>
 
     </nav>
     <article>
-        <div class="image-container">
-            <img class="main"  data-ng-repeat="picture in pictures" data-ng-class="{'isNext':isNext,'isPrev':!isNext}" data-ng-src="{{picture}}" data-ng-show="isActiveIndex($index)" >
+        <div class="image-container" ng-swipe-left="showPrev()" ng-swipe-right="showNext()">
+            <img class="main"  data-ng-repeat="picture in pictures" data-ng-class="{'isNext':isNext,'isPrev':!isNext}" data-ng-src="{{getPicture(picture.id,540,340)}}" data-ng-show="isActiveIndex($index)" >
             <a class="arrow prev" href="" data-ng-click="showPrev()"></a>
             <a class="arrow next" href="" data-ng-click="showNext()"></a>
             <div class="slickview">
@@ -18,4 +19,15 @@
             </div>
         </div>
     </article>
+        <button data-ng-click="login()">login</button>
+        <button data-ng-click="fetchalbums()">login</button>
+</div>
+    <div class="right">
+        <ul>
+            <li data-ng-repeat="album in albums" data-ng-click="fetchAlbumById(album.id)">
+                <img data-ng-src="{{getPicture(album.cover_photo,100,100)}}"  data-ng-attr-alt="{{album.name}}"/>
+                <h3 data-ng-bind="album.name"></h3>
+            </li>
+        </ul>
+    </div>
 </div>

@@ -6,7 +6,8 @@ angular.module('ngtouchApp', [
         'ngSanitize',
         'ngRoute',
         'ngTouch',
-        'ngAnimate'
+        'ngAnimate',
+        'fbservice'
     ])
   .config(function ($routeProvider) {
         $routeProvider

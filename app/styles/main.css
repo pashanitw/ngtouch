@@ -1,3 +1,6 @@
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
 li{
     list-style: none;
 }
@@ -6,6 +9,38 @@ ul{
 }
 body{
     background-color: #808080;
+}
+main{
+    width: 100%;
+}
+.left{
+    width: 70%;
+    max-width: 70%;
+    float: left;
+}
+.right{
+    width: 30%;
+    max-width: 30%;
+    float: right;
+}
+.right img{
+    display: inline-block;
+    margin-right: 13px;
+    width: 100px;
+    height: 100px;
+}
+.right ul li{margin-bottom: 5px; border: 1px solid gold; cursor: pointer; }
+.right ul li:hover{border: 1px solid darkblue;}
+
+.right ul li:nth-child(even) {background: #CCC}
+.right ul li:nth-child(odd) {background: #FFF}
+.right h3{
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 180px;
+
 }
 .arrow{
     position: absolute;
@@ -30,7 +65,7 @@ body{
 
 }
 .image-container{
-    border: 15px solid #ffffff;
+    border: 30px solid #ffffff;
     border-radius: 5px;
     width:600px;
     height: 400px;
@@ -42,8 +77,8 @@ body{
 .image-container img{
    position: absolute;
     z-index: 2;
-    width: 100%;
-    height: 100%;
+    width: 540px;
+    height: 340px;
 }
 .image-container .slickview{
     width: 100%;
@@ -80,40 +115,40 @@ body{
     display: block !important;
 }
 .isNext.main.ng-hide-add{
-    -webkit-transition: all 2s ease;
+    -webkit-transition: all 1s ease;
    -webkit-transform:translateX(0px);
     display: block !important;
 
 }
 .isNext.main.ng-hide-remove{
-    -webkit-transition: all 2s ease;
-    -webkit-transform:translateX(-600px);
+    -webkit-transition: all 1s ease;
+    -webkit-transform:translateX(-540px);
 }
 .isNext.main.ng-hide-remove-active{
-    left:600px;
+    left:540px;
 }
 .isNext.main.ng-hide-add-active{
-    left: 600px;
+    left: 540px;
 }
 /* previou click style */
 .isPrev.ng-hide-add,.ng-hide-remove{
     display: block !important;
 }
 .isPrev.main.ng-hide-add{
-    -webkit-transition: all 2s ease;
+    -webkit-transition: all 1s ease;
     -webkit-transform:translateX(0px);
     display: block !important;
 
 }
 .isPrev.main.ng-hide-remove{
-    -webkit-transition: all 2s ease;
-    -webkit-transform:translateX(600px);
+    -webkit-transition: all 1s ease;
+    -webkit-transform:translateX(540px);
 }
 .isPrev.main.ng-hide-remove-active{
-    left:-600px;
+    left:-540px;
 }
 .isPrev.main.ng-hide-add-active{
-    left: -600px;
+    left: -540px;
 }
 
 .simple{
