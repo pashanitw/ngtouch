@@ -17,6 +17,7 @@
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="styles/style.css"/>
     <!-- endbuild -->
   </head>
   <body ng-app="ngtouchApp">
@@ -56,16 +57,23 @@
     <script src="bower_components/hammerjs/hammer.js"></script>
     <script src="bower_components/angular-gestures/dist/gestures.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <!--custom modules-->
     <!--services-->
     <script src="scripts/services/fbService.js"></script>
     <script src="scripts/services/fbresource.js"></script>
+    <srcipt src="scripts/custom/custom.js"></srcipt>
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+    <!--filters-->
+    <script src="scripts/filters/arrayfilters.js"></script>
     <!--controllers-->
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/index.js"></script>
+    <script src="scripts/controllers/profile.js"></script>
+    <script src="scripts/controllers/friends.js"></script>
 
         <!-- endbuild -->
     <script src="http://connect.facebook.net/en_US/all.js"></script>

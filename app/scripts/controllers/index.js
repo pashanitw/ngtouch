@@ -1,12 +1,8 @@
 angular.module('ngtouchApp')
     .controller('IndexCtrl', function ($scope, fbOperations, me,FB_ACCESSTOKEN,albumService) {
 
-        $scope.pictures = ["images/slidepics/img00.jpg",
-            "images/slidepics/img01.jpg",
-            "images/slidepics/img02.jpg",
-            "images/slidepics/img03.jpg",
-            "images/slidepics/img04.jpg"
-        ];
+        $scope.showCont=false;
+        $scope.pictures = [];
         $scope.activeIndex = 0;
         $scope.isActiveIndex = function ($index) {
             return $index == $scope.activeIndex;
@@ -29,7 +25,7 @@ angular.module('ngtouchApp')
             $scope.animate = true;
         }
         $scope.login = function () {
-            fbOperations.login("user_photos");
+            fbOperations.login("user_photos,user_birthday,user_friends,user_location,user_relationship_details");
         };
         $scope.getPicture=function(cover_photo,width,height){
             return "https://graph.facebook.com/"+cover_photo+"/picture?width="+width+"&height="+height+"&access_token="+FB_ACCESSTOKEN.token;
@@ -38,10 +34,11 @@ angular.module('ngtouchApp')
         $scope.fetchalbums=function()
         {
             var params = {
-                fields: "albums.fields(id,name,cover_photo)"
+                fields: "albums.fields(id,name,cover_photo,count)"
             }
             me.query(params).then(function(data){
                 $scope.albums=data.albums.data;
+                $scope.showCont=true;
                 console.log($scope.albums);
             },function(){
                 console.log("failed");
@@ -59,6 +56,16 @@ angular.module('ngtouchApp')
                 console.log("failed");
             });
         }
+        $scope.albumInfo={
+            name:"",
+            count:0
+        }
 
     })
-;
+    .controller('AlbumCtrl',function($scope){
+        $scope.showPicture=function(id){
+            $scope.fetchAlbumById(id);
+            $scope.albumInfo.name=$scope.album.name;
+            $scope.albumInfo.count=$scope.album.count;
+        }
+    });

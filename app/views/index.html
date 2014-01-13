@@ -1,31 +1,29 @@
+<a href="/#/profile">Details</a>
+<a href="/#/friends">Friends</a>
 <div class="main">
     <div class="slider left">
-    <nav>
+        <nav>
 
-    </nav>
-    <article>
-        <div class="image-container" ng-swipe-left="showPrev()" ng-swipe-right="showNext()">
-            <img class="main"  data-ng-repeat="picture in pictures" data-ng-class="{'isNext':isNext,'isPrev':!isNext}" data-ng-src="{{getPicture(picture.id,540,340)}}" data-ng-show="isActiveIndex($index)" >
-            <a class="arrow prev" href="" data-ng-click="showPrev()"></a>
-            <a class="arrow next" href="" data-ng-click="showNext()"></a>
-            <div class="slickview">
-                <a class="slick prev"/>
-                <ul>
-                    <li data-ng-repeat="picture in pictures" data-ng-click="showPic($index)" data-ng-class="{'active':isActiveIndex($index)}">
-                        <img data-ng-src="{{picture}}"/>
-                    </li>
-                </ul>
-                <a class="slick next"/>
-            </div>
+        </nav><!--
+        <div data-ng-include="'views/partials/login.html'"></div>-->
+        <div data-ng-include="showCont && 'views/partials/frame.html' || 'views/partials/login.html'"></div>
+        <div>
+            <h3>Album Details</h3>
+            <h4 data-ng-bind="albumInfo.name"></h4>
+            <h5 data-ng-bind="albumInfo.count"></h5>
         </div>
-    </article>
         <button data-ng-click="login()">login</button>
         <button data-ng-click="fetchalbums()">login</button>
-</div>
+    </div>
     <div class="right">
         <ul>
-            <li data-ng-repeat="album in albums" data-ng-click="fetchAlbumById(album.id)">
-                <img data-ng-src="{{getPicture(album.cover_photo,100,100)}}"  data-ng-attr-alt="{{album.name}}"/>
+            <li>
+                <input type="search" data-ng-model="search"/>
+                <span>total: </span><span data-ng-bind="(filterBacklog=(albums | filter:{name:search})).length"></span>
+            </li>
+            <li data-ng-repeat="album in filterBacklog" data-ng-click="showPicture(album.id)" data-ng-controller="AlbumCtrl">
+                <img data-ng-src="[[getPicture(album.cover_photo,100,100)]]" data-ng-attr-alt="[[album.name]]"/>
+
                 <h3 data-ng-bind="album.name"></h3>
             </li>
         </ul>

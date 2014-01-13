@@ -7,9 +7,13 @@ angular.module('ngtouchApp', [
         'ngRoute',
         'ngTouch',
         'ngAnimate',
-        'fbservice'
+        'fbservice',
+        'LocalStorageModule',
+        'arrayFilters'
     ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider,$interpolateProvider) {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
         $routeProvider
             .when('/main', {
                 templateUrl: 'views/main.html',
@@ -19,6 +23,15 @@ angular.module('ngtouchApp', [
                 templateUrl: 'views/index.html',
                 controller: 'IndexCtrl'
             })
+            .when('/profile',{
+                templateUrl:'views/profile.html',
+                controller:'ProfileCtrl'
+            })
+            .when('/friends',{
+                templateUrl:'views/friends.html',
+                controller:'FriendCtrl'
+            })
+
             .otherwise({
                 redirectTo: '/'
             });

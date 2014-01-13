@@ -1,0 +1,22 @@
+
+<div class="image-container" ng-swipe-left="showPrev()"
+
+     ng-swipe-right="showNext()">
+    <img class="main" data-ng-repeat="picture in pictures"
+         data-ng-class="{'isNext':isNext,'isPrev':!isNext}"
+         data-ng-src="[[getPicture(picture.id,540,340)]]" data-ng-show="isActiveIndex($index)">
+    <a class="arrow prev" href="" data-ng-click="showPrev()"></a>
+    <a class="arrow next" href="" data-ng-click="showNext()"></a>
+
+    <div class="slickview">
+        <a class="slick prev"/>
+        <ul>
+            <li data-ng-repeat="picture in pictures" data-ng-click="showPic($index)"
+                data-ng-class="{'active':isActiveIndex($index)}">
+                <img data-ng-src="[[picture]]"/>
+            </li>
+        </ul>
+        <a class="slick next"/>
+    </div>
+
+</div>
