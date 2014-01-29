@@ -1,0 +1,51 @@
+/*
+
+variables
+
+----------------------------*/
+
+@desktop-width:   1024;
+@base-font-size:  16;
+@zero-pix:        0%;
+@min-percent:     0%;
+@max-percent:     100%;
+@oneEm:           1em;
+
+/*
+
+mixins
+
+----------------------------*/
+
+.percentWidth(@width:  @desktop-width,@base:  @desktop-width) {
+  width:  @width / @base * 100 + @min-percent;
+}
+
+.percentPadding(@base:@desktop-width,@top:0,@right:0,@bottom:0,@left:0) {
+  padding:  (@top/@base*100+@min-percent)
+            (@right/@base*100+@min-percent)
+            (@bottom/@base*100+@min-percent)
+            (@left/@base*100+@min-percent);
+}
+.emFontSize(@size:@base-font-size,@base:@base-font-size){
+  font-size: @size/@base*@oneEm
+}
+.emWidth(@size:1,@base:1){
+  width: @size/@base;
+}
+
+
+.clearfix {
+  zoom: 1;
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
