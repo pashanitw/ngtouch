@@ -44,4 +44,9 @@ angular.module('fbservice').
         return function(albumid){
             return fbresource(albumid)
         }
+    }).
+    factory('friend',function(fbresource){
+        return function(userId){
+            return fbresource(userId);
+        }
     })

@@ -1,3 +1,4 @@
+<!--
 <div style="margin: 24px 0 0 45px;">
     <input type="search" data-ng-model="search"/>
     <span>Toatal Items :</span><span data-ng-bind="(filterCol=(friends | filter:{first_name:search})).length"></span>
@@ -15,9 +16,9 @@
 
 </thead>
     <tbody>
-    <tr data-ng-repeat=" friend in filterCol  | pagination:pageIndex:pageSize | orderBy:sortField:reverse">
-        <td data-ng-bind="friend.id"></td>
-        <td data-ng-bind="friend.first_name"></td>
+    <tr data-ng-repeat=" friend in filterCol  | orderBy:sortField:reverse">
+        <td><a data-ng-click="redirect(friend.id)"  data-ng-bind="friend.id"></a></td>
+        <td data-ng-bind="friend.first_name | trim:10"></td>
         <td data-ng-bind="friend.last_name"></td>
         <td data-ng-bind="friend.birthday"></td>
         <td data-ng-bind="friend.location.name"></td>
@@ -25,4 +26,4 @@
         <td data-ng-bind="friend.relationship_status"></td>
     </tr>
     </tbody>
-</table></div>
+</table></div>-->

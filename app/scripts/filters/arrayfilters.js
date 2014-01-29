@@ -5,4 +5,13 @@ angular.module('arrayFilters', []).
             return inputArray.slice(start, start + pageSize);
         }
     }
-);
+).
+filter('trim',function(limitToFilter){
+        return function(input,limit){
+            if(input.length>limit){
+                return limitToFilter(input,limit-3)+"...";
+            }
+            return input;
+        }
+
+    });

@@ -31,6 +31,22 @@ angular.module('ngtouchApp', [
                 templateUrl:'views/friends.html',
                 controller:'FriendCtrl'
             })
+            .when('/friends/:userid',{
+                templateUrl:'views/friend.html',
+                controller:'InfoCtrl',
+                resolve:{
+                    user:function($route,$routeParams,friend,localStorageService){
+                        var id=$route.current.params.userid;
+                        var params={
+                            fields:'first_name,link,work,location'
+                        }
+                        var fservice=friend(id);
+                        return fservice.query(params).then(function(data){
+                           return data;
+                        });
+                    }
+                }
+            })
 
             .otherwise({
                 redirectTo: '/'

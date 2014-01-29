@@ -20,12 +20,19 @@
       <link rel="stylesheet" href="styles/style.css"/>
     <!-- endbuild -->
   </head>
-  <body ng-app="ngtouchApp">
+  <body ng-app="ngtouchApp" >
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
+   <nav class="navbar navbar-default">
+       <ul class="nav navbar-nav">
+           <li><a href="#/home">Home</a></li>
+           <li><a href="#/profile">Profile</a></li>
+           <li><a href="#/friends">Friends</a></li>
+       </ul>
+   </nav>
     <div class="container" ng-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -74,6 +81,7 @@
         <script src="scripts/controllers/index.js"></script>
     <script src="scripts/controllers/profile.js"></script>
     <script src="scripts/controllers/friends.js"></script>
+    <script src="scripts/controllers/navigation.js"></script>
 
         <!-- endbuild -->
     <script src="http://connect.facebook.net/en_US/all.js"></script>
