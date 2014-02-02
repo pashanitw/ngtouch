@@ -4,13 +4,16 @@ angular.module('ngtouchApp', [
         'ngCookies',
         'ngResource',
         'ngSanitize',
-        'ngRoute',
-        'ngTouch',
+        'ngRoute'
+        /*'ngTouch',
         'ngAnimate',
         'fbservice',
         'LocalStorageModule',
-        'arrayFilters'
+        'arrayFilters'*/
     ])
+    .controller('navCtrl',function($scope){
+            $scope.navigation=["Albums","Friends","Location","Events","Birthdays","weather","news"];
+    })
   .config(function ($routeProvider,$interpolateProvider) {
         $interpolateProvider.startSymbol('[[');
         $interpolateProvider.endSymbol(']]');

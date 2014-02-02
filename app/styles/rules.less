@@ -48,4 +48,64 @@ mixins
     clear: both;
   }
 }
+html{
+  height: 100%;
+}
+body{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: garageggothicregular, 'Arial Narrow', Helvetica, Arial, sans-serif;
+}
+ul,li{
+  list-style: none;
+}
+.navigation{
+  padding: 0;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+a{
+text-decoration: none;
+}
+
+.navigation li {
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.6em;
+  display: block;
+  background: #e26d5d;
+  background-color: #e47566;
+  border-bottom: 1px solid #da4632;
+  border-top: 1px solid #ea9488;
+  text-shadow: 0px -1px #da4632;
+  text-transform: uppercase;
+  line-height: 2.055;
+  padding-left: 8%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  position: relative;
+  a {
+    letter-spacing: 0.03em;
+    &:hover {
+      background: #e47566;
+    }
+    &:after {
+      .sprite;
+      content: '';
+      background-position: 0 -726px;
+      position: absolute;
+      right: 4%;
+      top: 18px;
+      height: 18px;
+      width: 10px;
+    }
+  }
+&:hover{
+  background: #e47566;
+}
+}
+.sprite{
+  background:url('sprites/sprite.png');
+}
 

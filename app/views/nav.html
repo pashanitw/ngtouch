@@ -1,7 +1,5 @@
-<div class="nav">
-    <ul>
-        <li data-ng-repeat="item in navigation">
-            <a data-ng-href="" data-ng-bind="item.name"></a>
+    <ul class="navigation" data-ng-controller="navCtrl">
+        <li  data-ng-repeat="item in navigation">
+            <a data-ng-href="" data-ng-bind="item"></a>
         </li>
     </ul>
-</div>
